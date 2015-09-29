@@ -26,17 +26,21 @@ body {
 	width: 659px;	
 }
 
-.ryu-ready, .ryu-still, .ryu-throwing {
+.ryu-ready, .ryu-cool, .ryu-still, .ryu-throwing {
 	height: 494px;
 	width: 659px;
 }
 
-.hadouken, .ryu-ready, .ryu-throwing { 
+.hadouken, .ryu-cool, .ryu-ready, .ryu-throwing { 
 	display: none; /* hide the initial ready and throwing images; they will appear in response to events */
 }
 
-.hadouken, .ryu-ready, .ryu-still, .ryu-throwing {
+.hadouken, .ryu-cool, .ryu-ready, .ryu-still, .ryu-throwing {
 	background-repeat: no-repeat;
+}
+
+.ryu-cool {
+	background-image: url('../images/ryu-cool.gif');
 }
 
 .ryu-ready{
