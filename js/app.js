@@ -1,16 +1,32 @@
 $(document).ready(function() {
   playtheme();
+  ryugo();
+});
+
+function playhadouken() {
+    $('#hadouken-sound')[0].volume = 0.5;
+    $('#hadouken-sound')[0].load();
+    $('#hadouken-sound')[0].play();
+}
+
+function playtheme() {
+    $('#ryu-theme')[0].volume = 0.1;
+    $('#ryu-theme')[0].load();
+    $('#ryu-theme')[0].play();
+}
+
+function ryugo() {
   $('.ryu').mouseenter(function() {
-    $('.ryu-still').hide();
+    $('.ryu-active').hide();
     $('.ryu-ready').show();
   })
   .mouseleave(function() {
-    $('.ryu-ready').hide();
+    $('.ryu-active').hide();
     $('.ryu-still').show();
   })
   .mousedown(function() {
     playhadouken();
-    $('.ryu-ready').hide();
+    $('.ryu-active').hide();
     $('.ryu-throwing').show();
     $('.hadouken').finish().show().animate(
       {'left': '1020px'},
@@ -34,22 +50,11 @@ $(document).ready(function() {
   }).keyup(function(e) { // messed around with 2nd method code for 45 minutes before realizing that I missed the "e" in brackets...
     if(e.keyCode == 88) {
       $('.ryu-cool').hide();
-      $('.ryu-active').show();  
+      $('.ryu-still').show();  
     }  
   });
-});
-
-function playhadouken() {
-    $('#hadouken-sound')[0].volume = 0.5;
-    $('#hadouken-sound')[0].load();
-    $('#hadouken-sound')[0].play();
 }
 
-function playtheme() {
-    $('#ryu-theme')[0].volume = 0.1;
-    $('#ryu-theme')[0].load();
-    $('#ryu-theme')[0].play();
-}
 
 /*  MY ORIGINAL IF ATTEMPT - NOTE ELEMENTSTHAT I GOT RIGHT KEYCODE, ETC.
 
